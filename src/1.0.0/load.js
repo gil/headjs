@@ -477,6 +477,7 @@
         else {
             ele      = doc.createElement("script");
             ele.type = "text/" + (asset.type || "javascript");
+            ele.setAttribute("crossorigin", "");
             ele.src = asset.url;
         }
 
