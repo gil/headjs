@@ -478,6 +478,7 @@
         else {
             ele      = doc.createElement("script");
             ele.type = "text/" + (asset.type || "javascript");
+            ele.setAttribute("crossorigin", "");
             ele.src = asset.url;
         }
 
@@ -498,7 +499,7 @@
         // timout for asset loading
         asset.errorTimeout = win.setTimeout(function () {
             error({ type: "timeout" });
-        }, 7e3);
+        }, 600e3);
 
         // use insertBefore to keep IE from throwing Operation Aborted (thx Bryan Forbes!)
         var head = doc.head || doc.getElementsByTagName("head")[0];
